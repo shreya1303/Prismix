@@ -39,25 +39,25 @@ const Home = () => {
             className="max-w-3xl"
           >
             {/* Text Content */}
-            <h1 className="text-white text-4xl md:text-5xl sm:text-2xl tracking-wider">
+            <h1 className="text-white text-4xl md:text-5xl sm:text-2xl tracking-wider leading-tight">
               Unleashing the Future of Media
             </h1>
-            <h1 className="text-white text-4xl md:text-5xl mt-3 sm:text-2xl tracking-wider">
+            <h1 className="text-white text-4xl md:text-5xl sm:text-2xl tracking-wider leading-tight">
               With{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text font-extrabold tracking-wider text-6xl sm:text-3xl md:text-6xl">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text font-extrabold tracking-wider text-5xl sm:text-lg md:text-6xl leading-tight">
                 AI-POWERED
               </span>
             </h1>
-            <h1 className="text-white text-3xl md:text-5xl tracking-wider">
+            <h1 className="text-white text-4xl md:text-5xl tracking-wider leading-tight">
               storytelling
             </h1>
 
             {/* Buttons */}
             <div className="mt-6 flex space-x-4">
-              <button className="bg-white/10 border border-white backdrop-blur-lg text-white px-4 py-3 rounded-lg text-lg hover:bg-white/20 transition duration-300 tracking-wider">
+              <button className="bg-white/10 border border-white backdrop-blur-lg text-white px-4 py-3 rounded-lg text-md md:text-lg hover:bg-white/20 transition duration-300 tracking-wider">
                 Explore Our Work
               </button>
-              <button className="border-2 border-white text-white px-4 py-3 rounded-lg text-lg hover:bg-white hover:text-black transition duration-300 tracking-wider">
+              <button className="border-2 border-white text-white px-4 py-3 rounded-lg text-md md:text-lg hover:bg-white hover:text-black transition duration-300 tracking-wider">
                 Partner With Us
               </button>
             </div>
