@@ -12,15 +12,16 @@ const WhatWeDo = () => {
 
   const videos = [
     {
-      src: "https://drive.google.com/uc?export=download&id=1gsuI1sYVptjrbd3Ak8ZsyUOGhy1PD_T8",
+      src: "video-1.mp4",
+
       id: 1,
     },
     {
-      src: "https://drive.google.com/uc?export=download&id=19eJe38wRV1hqie_ZW5WKgJQmAYJL9ZOJ",
+      src: "video-2.mp4",
       id: 2,
     },
     {
-      src: "https://drive.google.com/uc?export=download&id=1MHsI1YFZuay1hGz6JUtG-HlEsvincv4z",
+      src: "video-3.mp4",
       id: 3,
     },
   ];
