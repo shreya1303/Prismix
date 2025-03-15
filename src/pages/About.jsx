@@ -142,8 +142,8 @@ const About = () => {
                       viewport={{ once: true }}
                     />
 
-                    <h3 className="text-xl mt-2">{member.name}</h3>
-                    <p className="text-gray-300 text-sm">
+                    <h3 className="text-xl tracking-wider mt-2">{member.name}</h3>
+                    <p className="text-white text-sm">
                       {member.designation}
                     </p>
                   </motion.div>
