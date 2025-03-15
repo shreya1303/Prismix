@@ -93,22 +93,30 @@ const Navbar = () => {
           ✖
         </button>
 
-        {["Home", "About Us", "What We Do", "Contact"].map((text, index) => (
-          <motion.li
-            key={text}
-            initial={{ x: "-100%", opacity: 0 }}
-            animate={{ x: isOpen ? 0 : "-100%", opacity: isOpen ? 1 : 0 }}
-            transition={{ delay: index * 0.2, duration: 0.5 }}
-          >
-            <Link
-              to={`/${text.toLowerCase().replace(" ", "-")}`}
-              className="text-2xl text-white transition duration-300"
-              onClick={() => setIsOpen(false)}
+        {/* Add <ul> around the links */}
+        <ul className="space-y-6 text-center">
+          {[
+            { to: "/", text: "Home" },
+            { to: "/about", text: "About Us" },
+            { to: "/whatwedo", text: "What We Do" },
+            { to: "/contact", text: "Contact" },
+          ].map(({ to, text }, index) => (
+            <motion.li
+              key={text}
+              initial={{ x: "-100%", opacity: 0 }}
+              animate={{ x: isOpen ? 0 : "-100%", opacity: isOpen ? 1 : 0 }}
+              transition={{ delay: index * 0.2, duration: 0.5 }}
             >
-              {text}
-            </Link>
-          </motion.li>
-        ))}
+              <Link
+                to={to} // ✅ Correct path mapping
+                className="text-2xl text-white transition duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                {text}
+              </Link>
+            </motion.li>
+          ))}
+        </ul>
       </motion.div>
     </nav>
   );
