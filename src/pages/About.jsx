@@ -26,7 +26,7 @@ const About = () => {
     {
       name: "Sahil Nayar",
       designation: "Co-Founder & Chief Creative Officer",
-      image: "/sahil.png",
+      image: "/sahil.jpg",
       description:
         "Jane specializes in tech strategy and ensures our products meet the highest standards of quality.",
     },
