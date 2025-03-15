@@ -7,28 +7,28 @@ const About = () => {
       designation: "Chairman",
       image: "/ajay.jpeg",
       description:
-        "John has over 15 years of experience in the industry and leads the team with a vision to innovate and excel.",
+        "A two-time National Award-winning actor and industry veteran, Ajay Devgn brings over three decades of expertise to Prismix, a trailblazer in Generative AI. With a visionary approach to storytelling and technology, he drives AI-powered innovations in filmmaking, VFX, and digital content creation. Under his leadership, Prismix is redefining entertainment by seamlessly merging creativity with cutting-edge AI, setting new industry benchmarks.",
     },
     {
       name: "Danish Devgan",
       designation: "Co-Founder & Chief Business Officer",
       image: "/danish.jpeg",
       description:
-        "Jane specializes in tech strategy and ensures our products meet the highest standards of quality.",
+        "A visionary entrepreneur, Danish Devgn drives Prismix’s mission to merge AI with entertainment. With expertise in filmmaking, VFX, and business strategy, he leads business development and strategic partnerships, ensuring Prismix stays at the forefront of AI-driven content creation. His innovative approach is shaping the future of digital storytelling.",
     },
     {
       name: "Vatsal Seth",
       designation: "Co-Founder & Chief Executive Officer",
       image: "/vatsal.jpg",
       description:
-        "Jane specializes in tech strategy and ensures our products meet the highest standards of quality.",
+        "vatsal seth description",
     },
     {
       name: "Sahil Nayar",
       designation: "Co-Founder & Chief Creative Officer",
       image: "/sahil.jpg",
       description:
-        "Jane specializes in tech strategy and ensures our products meet the highest standards of quality.",
+        "sahil nayar description",
     },
   ];
 
@@ -36,7 +36,7 @@ const About = () => {
     <div className="w-full">
       {/* First Section - No Animation */}
       <div className="bg-black min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-10 text-white">
-        <div className="max-w-[1200px] w-full flex flex-col lg:flex-row items-center justify-center">
+        <div className="max-w-[1200px] w-full flex flex-col lg:flex-row items-center justify-center ">
           {/* Left Side - Image Collage with Animation */}
           <motion.div
             className="w-full lg:w-1/2 flex justify-center lg:justify-center mb-6 lg:mb-0"
@@ -97,7 +97,6 @@ const About = () => {
           viewport={{ once: true }}
         >
           <div className="relative bg-gradient-to-br from-[#442063] via-[#342557] to-[#1d3263] text-white max-w-6xl w-full mx-4 sm:mx-8 md:mx-auto px-6 sm:px-8 md:px-12 py-12 rounded-lg shadow-2xl before:absolute before:inset-0 before:bg-black/10 before:rounded-lg before:blur-[8px]">
-          
             <h2 className="text-4xl md:text-7xl sm:text-3xl font-semi-bold text-center mb-0">
               The Team
             </h2>
@@ -109,7 +108,7 @@ const About = () => {
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={index}
-                  className="flex flex-col lg:flex-row items-center gap-8 mb-12"
+                  className="flex flex-col lg:flex-row items-center gap-12 mb-12"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{
@@ -152,15 +151,15 @@ const About = () => {
                   {/* Right - Description */}
                   <motion.div
                     className="w-full lg:w-2/3 text-center lg:text-left"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{
-                      duration: 0.8,
+                      duration: 0.5,
                       delay: Math.min(index * 0.2, 0.5),
                     }}
                     viewport={{ once: true }}
                   >
-                    <p className="text-lg leading-relaxed text-gray-300">
+                    <p className="text-md text-white font-[arial] text-justify-left leading-tight">
                       {member.description}
                     </p>
                   </motion.div>

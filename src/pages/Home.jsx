@@ -4,6 +4,7 @@ const Home = () => {
   return (
     <div className="relative w-full h-auto">
       {/* Full-Screen Video Section */}
+      <div className="bg-gradient-to-b from-black to-[#0b1035]"></div>
       <section className="relative w-full h-screen snap-start">
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"
@@ -15,23 +16,23 @@ const Home = () => {
           controls={false}
         />
 
-        {/* Smooth Gradient Overlay to Blend Video with Next Section */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/40 to-[#140b0f] z-10"></div>
+        {/* Semi-Transparent Black Overlay for Smooth Transition */}
+        {/* <div className="absolute inset-0 bg-black bg-opacity-40"></div> */}
       </section>
 
       {/* Background & Text Section */}
       <section className="relative w-full h-screen flex items-start pt-16 snap-start">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center md:bg-[center_top] bg-no-repeat z-10"
+          className="absolute inset-0 bg-cover bg-center md:bg-[center_top] bg-no-repeat z-10 opacity-25"
           style={{ backgroundImage: "url('/desktop-bg-home.png')" }}
         ></div>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        {/* Semi-Transparent Black Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
         {/* Content */}
-        <div className="relative z-20 flex items-start h-full py-10 px-10 md:px-48">
+        <div className="relative z-20 flex items-start h-full py-40 px-10 md:px-48">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -54,10 +55,10 @@ const Home = () => {
 
             {/* Buttons */}
             <div className="mt-6 flex space-x-4">
-              <button className="bg-white/10 border border-white backdrop-blur-lg text-white px-4 py-3 rounded-lg text-md md:text-lg hover:bg-white/20 transition duration-300 tracking-wider">
+              <button className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-3 rounded-lg text-md md:text-lg hover:bg-white hover:text-black transition duration-300 tracking-wider">
                 Explore Our Work
               </button>
-              <button className="border-2 border-white text-white px-4 py-3 rounded-lg text-md md:text-lg hover:bg-white hover:text-black transition duration-300 tracking-wider">
+              <button className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-3 rounded-lg text-md md:text-lg hover:bg-white hover:text-black transition duration-300 tracking-wider">
                 Partner With Us
               </button>
             </div>
