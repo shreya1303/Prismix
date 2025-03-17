@@ -33,7 +33,7 @@ const Contact = () => {
     <section className="relative w-full h-screen flex items-center justify-center px-6 md:px-12">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-[-1]" // Fixed z-index issue
+        className="absolute min-h-screen inset-0 bg-cover bg-center bg-no-repeat z-[-1]" // Fixed z-index issue
         style={{ backgroundImage: "url('/contact-bg.png')", opacity: 1 }} // Adjusted opacity
       ></div>
 
