@@ -21,8 +21,12 @@ const WhatWeDo = () => {
       id: 3,
       title: "International Women's Day Film for Tata Motors",
     },
-    { src: "video-1.mp4", id: 1, title: "Being Human Body Building" },
-    { src: "video-2.mp4", id: 2, title: "Book of Silence" },
+    { src: "video-1.mp4", id: 1, title: "Book of Silence " },
+    {
+      src: "video-2.mp4",
+      id: 2,
+      title: "Being Human Body Building",
+    },
   ];
 
   const togglePlayPause = (id) => {
@@ -48,9 +52,20 @@ const WhatWeDo = () => {
   };
 
   return (
-    <section className="relative bg-black w-full h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 md:px-12 overflow-hidden">
+    <section className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 md:px-12 overflow-hidden">
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center md:bg-[center_top] bg-no-repeat z-10 opacity-25"
+        style={{
+          backgroundImage: "url('/whatwedo.png')",
+          backgroundSize: "cover",
+        }}
+      ></div>
+
+      {/* Semi-Transparent Black Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+
       {/* Main Container */}
-      <div className="max-w-7xl w-full flex flex-col md:flex-row-reverse items-center justify-between gap-4 md:gap-12">
+      <div className="relative z-10 max-w-7xl w-full flex flex-col md:flex-row-reverse items-center justify-between gap-4 md:gap-12 pt-40">
         {/* Right Side - Video Carousel */}
         <div className="w-full md:w-[50%] relative">
           <Swiper
@@ -73,15 +88,8 @@ const WhatWeDo = () => {
                   onMouseEnter={() => setHoveredVideo(video.id)}
                   onMouseLeave={() => setHoveredVideo(null)}
                 >
-                  {/* Video Title (Only show when the video is NOT playing) */}
-                  {playingVideo !== video.id && (
-                    <div className="absolute font-[arial] top-2 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-md text-center text-sm sm:text-base z-10">
-                      {video.title}
-                    </div>
-                  )}
-
                   {/* Video Player */}
-                  <div className="w-full aspect-video">
+                  <div className="w-full aspect-video relative">
                     <video
                       ref={(el) => (videoRefs.current[video.id] = el)}
                       src={video.src}
@@ -90,36 +98,44 @@ const WhatWeDo = () => {
                       onPause={() => setPlayingVideo(null)}
                       muted={isMuted}
                       playsInline
+                      onClick={() => togglePlayPause(video.id)}
                     />
+
+                    {/* Play Button (Only show when video is NOT playing) */}
+                    {playingVideo !== video.id && (
+                      <button
+                        onClick={() => togglePlayPause(video.id)}
+                        className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-lg text-white p-4"
+                      >
+                        <FaPlay className="text-5xl" />
+                      </button>
+                    )}
+
+                    {/* Pause Button (Show on hover when playing) */}
+                    {playingVideo === video.id && hoveredVideo === video.id && (
+                      <button
+                        onClick={() => togglePlayPause(video.id)}
+                        className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-lg text-white p-4 hidden md:flex"
+                      >
+                        <FaPause className="text-5xl" />
+                      </button>
+                    )}
+
+                    {/* Mute/Unmute Button (Always Visible, Bottom Right) */}
+                    <button
+                      onClick={toggleMute}
+                      className="absolute bottom-4 right-4 bg-black/50 text-white p-3 rounded-full"
+                    >
+                      {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+                    </button>
+
+                    {/* Video Title (Caption at the Bottom of the Video) */}
+                    {playingVideo !== video.id && (
+                      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-md text-center text-sm sm:text-base z-10">
+                        {video.title}
+                      </div>
+                    )}
                   </div>
-
-                  {/* Play Button (Shown when video is NOT playing) */}
-                  {playingVideo !== video.id && (
-                    <button
-                      onClick={() => togglePlayPause(video.id)}
-                      className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-lg text-white p-4"
-                    >
-                      <FaPlay className="text-5xl" />
-                    </button>
-                  )}
-
-                  {/* Pause Button (Shown only on hover when video is playing) */}
-                  {playingVideo === video.id && hoveredVideo === video.id && (
-                    <button
-                      onClick={() => togglePlayPause(video.id)}
-                      className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-lg text-white p-4"
-                    >
-                      <FaPause className="text-5xl" />
-                    </button>
-                  )}
-
-                  {/* Mute/Unmute Button (Always Visible, Bottom Right) */}
-                  <button
-                    onClick={toggleMute}
-                    className="absolute bottom-4 right-4 bg-black/50 text-white p-3 rounded-full"
-                  >
-                    {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-                  </button>
                 </div>
               </SwiperSlide>
             ))}
@@ -132,18 +148,19 @@ const WhatWeDo = () => {
         </div>
 
         {/* Left Side - Features List */}
-        <div className="w-full md:w-[45%] flex flex-col gap-4 text-center md:text-left">
+        <div className="w-full md:w-[50%] flex flex-col gap-4 text-center md:text-left">
           <motion.h2
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-4xl sm:text-3xl md:text-6xl text-white leading-tight"
+            className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text text-4xl sm:text-3xl md:text-7xl leading-tight"
           >
             AI-Driven Content Creation
           </motion.h2>
 
-          <ul className="flex flex-col font-[arial] gap-3 sm:gap-4">
+          <ul className="flex flex-wrap font-[arial] text-md sm:text-md md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl gap-3 sm:gap-4 pb-10">
             {[
+              "Education.",
               "Short Films & Series – AI-generated storytelling for digital and OTT platforms.",
               "Animated Graphic Novels – Engaging visual narratives crafted with AI.",
               "Music Videos – AI-enhanced visuals that redefine the music experience.",
@@ -155,7 +172,7 @@ const WhatWeDo = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-gradient-to-r from-[#1D2671] to-black backdrop-blur-lg text-white px-4 py-2 sm:px-5 sm:py-3 rounded-2xl shadow-lg w-full md:w-max text-sm sm:text-base md:text-md"
+                className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-2 sm:px-5 sm:py-3 rounded-2xl shadow-lg w-full md:w-auto text-base sm:text-lg md:text-xl"
               >
                 {item}
               </motion.li>

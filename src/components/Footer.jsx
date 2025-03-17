@@ -4,9 +4,9 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12 px-10 flex flex-col items-center sm:flex-row sm:justify-center sm:px-20">
+    <footer className="bg-black text-white py-0 px-10 flex flex-col items-center sm:flex-row sm:justify-center sm:px-20">
       {/* Logo - Moves towards center */}
-      <div className="flex items-center mb-6 sm:mb-0 md:mr-18 sm:mr-8">
+      <div className="flex items-center mb-4 sm:mb-0 md:mr-18 sm:mr-8">
         <img src="/logo.png" alt="Logo" className="h-32 w-auto sm:h-44" />
       </div>
 
