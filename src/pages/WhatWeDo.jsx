@@ -15,10 +15,10 @@ const WhatWeDo = () => {
   const videoRefs = useRef({});
   const swiperRef = useRef(null);
 
-  const videos = [
-    { src: "video-1.mp4", id: 1 },
-    { src: "video-2.mp4", id: 2 },
-    { src: "video-3.mp4", id: 3 },
+    const videos = [
+      { src: "video-3.mp4", id: 3, title: "International Women's Day Film for Tata Motors" },
+  { src: "video-1.mp4", id: 1, title: "Being Human Body Building" },
+  { src: "video-2.mp4", id: 2, title: "Book of Silence" },
   ];
 
   const togglePlayPause = (id) => {
@@ -69,6 +69,11 @@ const WhatWeDo = () => {
                   onMouseEnter={() => setHoveredVideo(video.id)}
                   onMouseLeave={() => setHoveredVideo(null)}
                 >
+                  {/* Video Title */}
+                  <div className="absolute font-[arial] top-2 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-md text-center text-sm sm:text-base z-10">
+                   {video.title}
+                  </div>
+
                   {/* Video Player */}
                   <div className="w-full aspect-video">
                     <video

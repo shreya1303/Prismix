@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 const Home = () => {
   return (
@@ -55,12 +57,15 @@ const Home = () => {
 
             {/* Buttons */}
             <div className="mt-6 flex space-x-4">
-              <button className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-3 rounded-lg text-md md:text-lg hover:bg-white hover:text-black transition duration-300 tracking-wider">
+              <Link
+                to="/whatwedo"
+                className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-3 rounded-lg text-sm md:text-lg hover:bg-white hover:text-black transition duration-300 tracking-wider"
+              >
                 Explore Our Work
-              </button>
-              <button className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-3 rounded-lg text-md md:text-lg hover:bg-white hover:text-black transition duration-300 tracking-wider">
+              </Link>
+              {/* <button className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-3 rounded-lg text-sm md:text-lg hover:bg-white hover:text-black transition duration-300 tracking-wider">
                 Partner With Us
-              </button>
+              </button> */}
             </div>
           </motion.div>
         </div>

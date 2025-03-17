@@ -1,4 +1,36 @@
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
+  const formRef = useRef();
+  const [isSent, setIsSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "your_service_id", // Replace with your EmailJS Service ID
+        "your_template_id", // Replace with your EmailJS Template ID
+        formRef.current,
+        "your_public_key" // Replace with your EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setIsSent(true);
+          setLoading(false);
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          setLoading(false);
+        }
+      );
+  };
+
   return (
     <section className="relative w-full h-screen flex items-center justify-center px-6 md:px-12">
       {/* Background Image */}
@@ -24,49 +56,66 @@ const Contact = () => {
         <div className="w-full md:w-1/2 bg-gradient-to-br from-[#62137d] via-[#482177] to-[#1c326b] p-6 rounded-lg shadow-lg self-stretch flex flex-col justify-center">
           <h3 className="text-white text-4xl mb-6 text-center">Let's Talk</h3>
 
-          <form className="flex flex-col gap-5">
-            {/* Name Field */}
-            <div className="flex flex-col">
-              <label className="text-white text-sm mb-1">Your Name</label>
-              <input
-                type="text"
-                placeholder="Enter your name"
-                className="w-full p-2 bg-white/20 text-black rounded-2xl focus:outline-none"
-              />
-            </div>
+          {isSent ? (
+            <p className="text-green-400 text-center text-lg">
+              ✅ Message Sent Successfully!
+            </p>
+          ) : (
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="flex flex-col gap-5"
+            >
+              {/* Name Field */}
+              <div className="flex flex-col">
+                <label className="text-white text-sm mb-1">Your Name</label>
+                <input
+                  type="text"
+                  name="user_name"
+                  placeholder="Enter your name"
+                  className="w-full p-2 bg-white/20 text-black rounded-2xl focus:outline-none"
+                  required
+                />
+              </div>
 
-            {/* Email Field */}
-            <div className="flex flex-col">
-              <label className="text-white text-sm mb-1">Email</label>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full p-2 bg-white/20 text-black rounded-2xl focus:outline-none"
-              />
-            </div>
+              {/* Email Field */}
+              <div className="flex flex-col">
+                <label className="text-white text-sm mb-1">Email</label>
+                <input
+                  type="email"
+                  name="user_email"
+                  placeholder="Enter your email"
+                  className="w-full p-2 bg-white/20 text-black rounded-2xl focus:outline-none"
+                  required
+                />
+              </div>
 
-            {/* Message Field */}
-            <div className="flex flex-col">
-              <label className="text-white text-sm mb-1">
-                Type Your Message
-              </label>
-              <textarea
-                placeholder="Write your message here..."
-                rows="4"
-                className="w-full p-2 bg-white/20 text-black rounded-2xl focus:outline-none"
-              ></textarea>
-            </div>
+              {/* Message Field */}
+              <div className="flex flex-col">
+                <label className="text-white text-sm mb-1">
+                  Type Your Message
+                </label>
+                <textarea
+                  name="message"
+                  placeholder="Write your message here..."
+                  rows="4"
+                  className="w-full p-2 bg-white/20 text-black rounded-2xl focus:outline-none"
+                  required
+                ></textarea>
+              </div>
 
-            {/* Submit Button */}
-            <div className="flex justify-center">
-              <button
-                type="submit"
-                className="bg-transparent shadow-[0_0_10px_rgba(255,255,255,0.8)] text-white text-sm px-3 py-1.5 rounded-md hover:bg-white hover:text-black shadow-[0_0_15px_rgba(255,255,255,1)] transition-all inline-flex items-center"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
+              {/* Submit Button */}
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="bg-transparent shadow-[0_0_10px_rgba(255,255,255,0.8)] text-white text-sm px-3 py-1.5 rounded-md hover:bg-white hover:text-black shadow-[0_0_15px_rgba(255,255,255,1)] transition-all inline-flex items-center"
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : "Submit"}
+                </button>
+              </div>
+            </form>
+          )}
         </div>
       </div>
     </section>

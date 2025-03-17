@@ -17,18 +17,30 @@ const About = () => {
         "A visionary entrepreneur, Danish Devgn drives Prismix’s mission to merge AI with entertainment. With expertise in filmmaking, VFX, and business strategy, he leads business development and strategic partnerships, ensuring Prismix stays at the forefront of AI-driven content creation. His innovative approach is shaping the future of digital storytelling.",
     },
     {
-      name: "Vatsal Seth",
+      name: "Vatsal Sheth",
       designation: "Co-Founder & Chief Executive Officer",
       image: "/vatsal.jpg",
       description:
-        "vatsal seth description",
+        "Vatsal Sheth is an acclaimed Indian actor and entrepreneur, known for Taarzan: The Wonder Car, Ek Hasina Thi, and Just Mohabbat. With over two decades in film and television, he has established himself as a versatile performer. As Co-Founder and CEO of Prismix Studios, Vatsal leads innovation in media and digital storytelling, blending technology with entertainment. A fitness enthusiast and sports lover, he continues to shape the future of Indian entertainment through his creative and business ventures.",
     },
     {
       name: "Sahil Nayar",
       designation: "Co-Founder & Chief Creative Officer",
       image: "/sahil.jpg",
       description:
-        "sahil nayar description",
+        "Sahil Nayar is a seasoned professional in the Generative AI media content space, specializing in storytelling for entertainment and education. As Co-Founder and Chief Creative Officer of Prismix, he oversees content creation, leveraging AI-driven technologies, transmedia storytelling, and edutainment techniques to craft engaging and impactful experiences. A six sigma Black Belt with  over 23 years of experience spanning media, corporate operations, and business consulting, Sahil combines creative vision with strategic insight. His background in feature film editing, post-production, and corporate storytelling allows him to transform complex ideas into compelling, multimedia-rich content.",
+    },
+    {
+      name: "Nilesh Garg",
+      designation: "CFO",
+      image: "",
+      description: "Nilesh Garg description",
+    },
+    {
+      name: "Ruchi Kanojiya",
+      designation: "Head - Compliance and Legal",
+      image: "",
+      description: "Ruchi Kanojiya description",
     },
   ];
 
@@ -142,10 +154,10 @@ const About = () => {
                       viewport={{ once: true }}
                     />
 
-                    <h3 className="text-xl tracking-wider mt-2">{member.name}</h3>
-                    <p className="text-white text-sm">
-                      {member.designation}
-                    </p>
+                    <h3 className="text-xl tracking-wider mt-2">
+                      {member.name}
+                    </h3>
+                    <p className="text-white text-sm">{member.designation}</p>
                   </motion.div>
 
                   {/* Right - Description */}
