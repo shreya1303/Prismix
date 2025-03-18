@@ -57,13 +57,13 @@ const Home = () => {
       {/* News Section */}
       <section
         className="py-16 px-10 flex justify-center relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/desktop-bg-home.png')" }} 
+        style={{ backgroundImage: "url('/desktop-bg-home.png')" }}
       >
         {/* Semi-transparent overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
         <div className="relative w-full max-w-6xl z-10">
-          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider font-semi-bold text-center text-white mb-10">
+          <h2 className=" bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider font-semi-bold text-center mb-10">
             Latest News
           </h2>
 
@@ -148,7 +148,9 @@ const Home = () => {
 
       {/* Our Clients Section */}
       <section className="py-16 px-10 bg-black text-white">
-        <h2 className="text-3xl font-bold text-center mb-10">Our Clients</h2>
+        <h2 className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider font-semi-bold text-center mb-10">
+          Our Clients
+        </h2>
         <div className="flex flex-wrap justify-center gap-10">
           <img src="/client1.png" alt="Client 1" className="h-16 w-auto" />
           <img src="/client2.png" alt="Client 2" className="h-16 w-auto" />

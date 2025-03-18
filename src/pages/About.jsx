@@ -105,7 +105,7 @@ const About = () => {
             <h1 className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semi-bold leading-tight">
               Redefining media with generative AI
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed mt-4">
+            <p className="text-lg font-[arial] md:text-2xl lg:2xl xl:2xl leading-relaxed mt-4">
               At{" "}
               <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text font-bold">
                 Prismix Studios
@@ -119,6 +119,7 @@ const About = () => {
         </div>
       </div>
 
+      {/* Our Team Section */}
       {/* Our Team Section */}
       <div className="bg-black py-16">
         <motion.section
@@ -142,20 +143,26 @@ const About = () => {
                 <motion.div
                   key={index}
                   className="flex flex-col lg:flex-row items-center gap-12"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: index * 0.2, // Delay for the staggered effect
+                  }}
                   viewport={{ once: true }}
                 >
                   {/* Profile Image Card */}
-                  <motion.div className="relative bg-white/10 backdrop-blur-lg shadow-lg rounded-xl p-4 flex flex-col items-center w-56 h-80">
+                  <motion.div className="relative bg-white/10 backdrop-blur-lg shadow-lg rounded-xl p-4 flex flex-col items-center w-56 h-[22rem] min-h-[22rem]">
+                    {/* Image with Placeholder */}
                     <motion.img
-                      src={member.image}
+                      src={member.image || "/placeholder.jpg"}
                       alt={member.name}
                       className="w-48 h-64 object-cover rounded-lg shadow-md"
                     />
-                    <h3 className="text-xl font-[arial] font-bold md:text-2xl mt-2">{member.name}</h3>
-                    <p className="text-white font-[arial] font-semibold text-sm md:text-lg lg:text-lg text-center tracking-wider xl:text-lg leading-tight">
+                    <h3 className="text-xl font-[arial] font-bold md:text-2xl mt-2">
+                      {member.name}
+                    </h3>
+                    <p className="text-white font-[arial] font-semibold text-sm md:text-lg lg:text-lg text-center tracking-wider xl:text-lg leading-tight mb-2">
                       {member.designation}
                     </p>
                   </motion.div>

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation(); // Track current location
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -20,20 +21,37 @@ const Navbar = () => {
     return () => document.removeEventListener("click", handleOutsideClick);
   }, [isOpen]);
 
+  const navLinks = [
+    { to: "/", text: "Home" },
+    { to: "/about", text: "About Us" },
+    { to: "/whatwedo", text: "What We Do" },
+    { to: "/contact", text: "Contact" },
+  ];
+
   return (
     <nav className="bg-black h-20 px-10 shadow-lg flex items-center">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left Links */}
         <ul className="hidden md:flex flex-1 justify-end gap-x-16 text-2xl text-white tracking-wider">
-          {[
-            { to: "/", text: "Home" },
-            { to: "/about", text: "About Us" },
-          ].map(({ to, text }) => (
+          {navLinks.slice(0, 2).map(({ to, text }) => (
             <li key={text} className="relative group">
-              <Link to={to} className="transition duration-300">
+              <Link
+                to={to}
+                className={`transition duration-300 ${
+                  location.pathname === to ? "text-white font-bold" : ""
+                }`}
+              >
                 {text}
               </Link>
+              {/* Hover Effect */}
               <motion.div className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+              {/* Active Page Indicator */}
+              {location.pathname === to && (
+                <motion.div
+                  className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-white"
+                  layoutId="underline"
+                />
+              )}
             </li>
           ))}
         </ul>
@@ -47,17 +65,27 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Right Links (Fixed Hover Effect) */}
+        {/* Right Links */}
         <ul className="hidden md:flex flex-1 justify-start gap-x-16 text-2xl text-white tracking-wider">
-          {[
-            { to: "/whatwedo", text: "What We Do" },
-            { to: "/contact", text: "Contact" },
-          ].map(({ to, text }) => (
+          {navLinks.slice(2).map(({ to, text }) => (
             <li key={text} className="relative group">
-              <Link to={to} className="transition duration-300">
+              <Link
+                to={to}
+                className={`transition duration-300 ${
+                  location.pathname === to ? "text-white font-bold" : ""
+                }`}
+              >
                 {text}
               </Link>
+              {/* Hover Effect */}
               <motion.div className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+              {/* Active Page Indicator */}
+              {location.pathname === to && (
+                <motion.div
+                  className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-white"
+                  layoutId="underline"
+                />
+              )}
             </li>
           ))}
         </ul>
@@ -93,14 +121,9 @@ const Navbar = () => {
           ✖
         </button>
 
-        {/* Add <ul> around the links */}
+        {/* Mobile Menu Links */}
         <ul className="space-y-6 text-center">
-          {[
-            { to: "/", text: "Home" },
-            { to: "/about", text: "About Us" },
-            { to: "/whatwedo", text: "What We Do" },
-            { to: "/contact", text: "Contact" },
-          ].map(({ to, text }, index) => (
+          {navLinks.map(({ to, text }, index) => (
             <motion.li
               key={text}
               initial={{ x: "-100%", opacity: 0 }}
@@ -108,8 +131,10 @@ const Navbar = () => {
               transition={{ delay: index * 0.2, duration: 0.5 }}
             >
               <Link
-                to={to} // ✅ Correct path mapping
-                className="text-2xl text-white transition duration-300"
+                to={to}
+                className={`text-2xl text-white transition duration-300 ${
+                  location.pathname === to ? "text-white font-bold" : ""
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {text}
