@@ -153,10 +153,13 @@ const WhatWeDo = () => {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider leading-tight"
+            className="text-white tracking-wider text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight"
           >
-            AI-Driven&nbsp;
-            <span className="text-white">Content Creation</span>
+            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+              {" "}
+              AI-Driven&nbsp;
+            </span>
+            Content Creation
           </motion.h2>
 
           <ul className="flex flex-wrap font-[arial] text-md sm:text-md md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl gap-3 sm:gap-4 pb-10">
