@@ -43,9 +43,7 @@ const Navbar = () => {
               >
                 {text}
               </Link>
-              {/* Hover Effect */}
               <motion.div className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-              {/* Active Page Indicator */}
               {location.pathname === to && (
                 <motion.div
                   className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-white"
@@ -57,11 +55,11 @@ const Navbar = () => {
         </ul>
 
         {/* Logo in the Center */}
-        <div className="mx-24">
+        <div className="mx-auto md:mx-24 flex-shrink-0">
           <img
             src="/logo.png"
             alt="Prismix Logo"
-            className="h-auto max-h-36 w-auto "
+            className="h-[128px] w-auto object-contain"
           />
         </div>
 
@@ -77,9 +75,7 @@ const Navbar = () => {
               >
                 {text}
               </Link>
-              {/* Hover Effect */}
               <motion.div className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-              {/* Active Page Indicator */}
               {location.pathname === to && (
                 <motion.div
                   className="absolute left-0 bottom-[-4px] h-[2px] w-full bg-white"

@@ -5,21 +5,22 @@ const Home = () => {
   return (
     <div className="relative w-full h-auto">
       {/* Full-Screen Video Section */}
-      <section className="relative w-full h-screen overflow-hidden">
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover aspect-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ aspectRatio: "16 / 9" }}
+      <section className="relative w-full h-auto">
+        <div
+          className="w-full"
+          style={{ paddingTop: "56.25%" /* 16:9 Aspect Ratio */ }}
         >
-          <source src="/home-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        {/* Semi-Transparent Black Overlay
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div> */}
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/home-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </section>
 
       {/* Background & Text Section */}
@@ -138,7 +139,7 @@ const Home = () => {
               >
                 <div className="w-full h-48 overflow-hidden rounded-md">
                   <img
-                    src="/news1.png"
+                    src="/news3.png"
                     alt="News 3"
                     className="w-full h-full object-cover"
                   />
@@ -157,7 +158,7 @@ const Home = () => {
         <h2 className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider font-semi-bold text-center mb-10">
           Our Clients
         </h2>
-        <div className="flex justify-center items-center gap-30">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-10 md:gap-20 lg:gap-30 xl:gap-30">
           <img
             src="/sodexo.png"
             alt="Client 1"
