@@ -36,38 +36,58 @@ const Home = () => {
 
         {/* Content */}
         <div className="relative z-20 flex flex-col items-center text-center px-10">
-          <motion.div
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="max-w-3xl"
-          >
-            {/* Text Content */}
-            <h1 className="text-white text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider leading-tight">
-              Unleashing the Future of
-              <br />
+          {/* Mobile View Text */}
+          <div className="block md:hidden">
+            <h1 className="text-white text-3xl tracking-wider leading-tight">
+              Unleashing the Future
             </h1>
-            <h1 className="text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider leading-tight">
-              Media With{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text font-semibold tracking-wider text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight">
+            <h1 className="text-white text-3xl tracking-wider leading-tight">
+              of Media With
+            </h1>
+            <h1 className="text-white text-3xl tracking-wider leading-tight">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text font-semibold">
                 AI-POWERED
               </span>
             </h1>
-            <h1 className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider leading-tight">
+            <h1 className="text-white text-3xl tracking-wider leading-tight">
               Storytelling
             </h1>
+          </div>
 
-            {/* Buttons */}
-            <div className="mt-6 flex justify-center space-x-4">
-              <Link
-                to="/whatwedo"
-                onClick={() => window.scrollTo(0, 0)}
-                className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-3 rounded-lg text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl hover:bg-white hover:text-black transition duration-300 tracking-wider"
-              >
-                Explore Our Work
-              </Link>
-            </div>
-          </motion.div>
+          {/* Desktop View Text */}
+          <div className="hidden md:block">
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="max-w-3xl"
+            >
+              <h1 className="text-white text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider leading-tight">
+                Unleashing the Future of
+                <br />
+              </h1>
+              <h1 className="text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider leading-tight">
+                Media With{" "}
+                <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text font-semibold tracking-wider text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight">
+                  AI-POWERED
+                </span>
+              </h1>
+              <h1 className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider leading-tight">
+                Storytelling
+              </h1>
+            </motion.div>
+          </div>
+
+          {/* Buttons */}
+          <div className="mt-6 flex justify-center space-x-4">
+            <Link
+              to="/whatwedo"
+              onClick={() => window.scrollTo(0, 0)} // Scroll to top on navigation
+              className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-3 rounded-lg text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl hover:bg-white hover:text-black transition duration-300 tracking-wider"
+            >
+              Explore Our Work
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -154,7 +174,7 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="px-10 bg-black text-white">
+      <section className="py-16 px-10 bg-black text-white">
         <h2 className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider font-semi-bold text-center mb-10">
           Our Clients
         </h2>
