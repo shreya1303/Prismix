@@ -21,12 +21,12 @@ const WhatWeDo = () => {
       id: 3,
       title: "International Women's Day Film for Tata Motors",
     },
-    { src: "video-1.mp4", id: 1, title: "Book of Silence " },
     {
       src: "video-2.mp4",
       id: 2,
       title: "Being Human Body Building",
     },
+    { src: "video-1.mp4", id: 1, title: "Book of Silence " },
   ];
 
   const togglePlayPause = (id) => {
@@ -129,12 +129,12 @@ const WhatWeDo = () => {
                       {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
                     </button>
 
-                    {/* Video Title (Caption at the Bottom of the Video) */}
+                    {/* Video Title (Caption at the Bottom of the Video)
                     {playingVideo !== video.id && (
                       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-md text-center text-sm sm:text-base z-10">
                         {video.title}
                       </div>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </SwiperSlide>
@@ -153,18 +153,19 @@ const WhatWeDo = () => {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text text-4xl sm:text-3xl md:text-7xl leading-tight"
+            className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider leading-tight"
           >
-            AI-Driven Content Creation
+            AI-Driven&nbsp;
+            <span className="text-white">Content Creation</span>
           </motion.h2>
 
           <ul className="flex flex-wrap font-[arial] text-md sm:text-md md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl gap-3 sm:gap-4 pb-10">
             {[
-              "Education.",
+              "Customized Edutainment content for school children across all age groups. ",
               "Short Films & Series – AI-generated storytelling for digital and OTT platforms.",
               "Animated Graphic Novels – Engaging visual narratives crafted with AI.",
               "Music Videos – AI-enhanced visuals that redefine the music experience.",
-              "Corporate Content & Ad Campaigns – High-quality branding solutions powered by AI.",
+              "Corporate Content & Ad campaigns - High quality branding, communications and training solutions powered by Ai",
               "Social Media Content – Scalable, AI-optimized content for all platforms.",
             ].map((item, index) => (
               <motion.li

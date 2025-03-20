@@ -34,18 +34,23 @@ const Contact = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-[-1]" // Fixed z-index issue
-        style={{ backgroundImage: "url('/contact-bg.png')", opacity: 1 }} // Adjusted opacity
+        style={{ backgroundImage: "url('/news.png')", opacity: 1 }} // Adjusted opacity
       ></div>
+
+      {/* Black Overlay */}
+      <div className="absolute inset-0 bg-black opacity-70 z-[-1]"></div>
 
       {/* Overlay Container */}
       <div className="relative z-10 bg-black/50 backdrop-blur-lg rounded-xl p-10 w-full max-w-5xl flex flex-col md:flex-row items-center md:items-start shadow-lg">
         {/* Left Side - Text Section */}
         <div className="w-full md:w-1/2 text-white flex flex-col items-center md:items-end justify-center text-center md:text-right pr-0 md:pr-10 self-stretch">
-          <h2 className="text-3xl sm:text-lg md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl font-semibold leading-tight bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider leading-tight bg-gradient-to-r text-white">
             Want to <br />
             collaborate <br />
             or explore <br />
-            AI-driven <br />
+            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text tracking-wider text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight">
+              AI-driven <br />
+            </span>
             storytelling?
           </h2>
         </div>

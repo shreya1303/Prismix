@@ -61,7 +61,7 @@ const Navbar = () => {
           <img
             src="/logo.png"
             alt="Prismix Logo"
-            className="h-auto max-h-32 w-auto"
+            className="h-auto max-h-36 w-auto "
           />
         </div>
 
