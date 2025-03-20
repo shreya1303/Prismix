@@ -24,7 +24,7 @@ const Home = () => {
       </section>
 
       {/* Background & Text Section */}
-      <section className="relative w-full h-screen flex items-center justify-center snap-start">
+      <section className="relative w-full h-[50vh] md:h-screen flex items-center justify-center snap-start">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center md:bg-[center_top] bg-no-repeat z-10 opacity-25"
@@ -61,7 +61,7 @@ const Home = () => {
             <div className="mt-6 flex justify-center space-x-4">
               <Link
                 to="/whatwedo"
-                onClick={() => window.scrollTo(0, 0)} // Scroll to top on navigation
+                onClick={() => window.scrollTo(0, 0)}
                 className="bg-white/10 border border-white/20 backdrop-blur-lg text-white px-4 py-3 rounded-lg text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl hover:bg-white hover:text-black transition duration-300 tracking-wider"
               >
                 Explore Our Work
@@ -154,7 +154,7 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="py-16 px-10 bg-black text-white">
+      <section className="px-10 bg-black text-white">
         <h2 className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider font-semi-bold text-center mb-10">
           Our Clients
         </h2>
