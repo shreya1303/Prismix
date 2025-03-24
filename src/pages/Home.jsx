@@ -190,8 +190,18 @@ const Home = () => {
             className="h-20 w-40 object-contain"
           />
           <img
-            src="/client3.png"
+            src="/flf.png"
             alt="Client 3"
+            className="h-20 w-40 object-contain"
+          />
+          <img
+            src="/tata.png"
+            alt="Client 4"
+            className="h-20 w-40 object-contain"
+          />
+          <img
+            src="/gsl.png"
+            alt="Client 5"
             className="h-20 w-40 object-contain"
           />
         </div>
