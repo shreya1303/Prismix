@@ -42,7 +42,7 @@ const About = () => {
       designation: "Head - Compliance and Legal",
       image: "/ruchi.jpeg",
       description:
-        "FCS Ruchi Kanojiya, a legal and compliance expert with 12+ years of experience, specializes in corporate governance, M&A, and regulatory compliance across industries. For over seven years, she has led Compliance & Legal at Devgn Group, overseeing governance for Devgn Films LLP, NY VFXWAALA LLP, Goodbye Kansas Asia Pvt Ltd, Green Energy Pvt Ltd, Prismix Studios LLP, Lens Vault Studios Pvt Ltd, and more.",
+        "Ruchi Kanojiya, a Fellow Company Secretary and Lawyer with over 12 years of experience in Corporate governance, M&A, Regulatory Compliance, and IPR, plays a vital role in Devgn Group. She leads Compliance & Legal operations for entities such as Devgn Films LLP, NY VFXWAALA LLP, Goodbye Kansas Asia Pvt Ltd, Green Energy Pvt Ltd, Prismix Studios LLP, Lens Vault Studios Pvt Ltd, and more. Her vast experience strengthens legal frameworks across diverse verticals, including Media, Real Estate, and Renewable Energy.",
     },
   ];
 

@@ -178,7 +178,7 @@ const Home = () => {
         <h2 className="text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-wider font-semi-bold text-center mb-10">
           Our Clients
         </h2>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-10 md:gap-20 lg:gap-30 xl:gap-30">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:mx-40 md:mx-40 lg:mx-40 gap-10 md:gap-20 lg:gap-30 xl:gap-30 justify-items-center">
           <img
             src="/sodexo.png"
             alt="Client 1"
@@ -202,6 +202,11 @@ const Home = () => {
           <img
             src="/gsl.png"
             alt="Client 5"
+            className="h-20 w-40 object-contain"
+          />
+          <img
+            src="/spotlight.png"
+            alt="Client 6"
             className="h-20 w-40 object-contain"
           />
         </div>
