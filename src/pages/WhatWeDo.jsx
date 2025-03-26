@@ -168,7 +168,7 @@ const WhatWeDo = () => {
               "Short Films & Series – AI-generated storytelling for digital and OTT platforms.",
               "Animated Graphic Novels – Engaging visual narratives crafted with AI.",
               "Music Videos – AI-enhanced visuals that redefine the music experience.",
-              "Corporate Content & Ad campaigns - High quality branding, communications and training solutions powered by Ai",
+              "Corporate Content & Ad campaigns - High quality branding, communications and training solutions powered by AI",
               "Social Media Content – Scalable, AI-optimized content for all platforms.",
             ].map((item, index) => (
               <motion.li
