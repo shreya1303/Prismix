@@ -7,7 +7,7 @@ const About = () => {
       designation: "Chairman",
       image: "/ajay.jpeg",
       description:
-        "A two-time National Award-winning actor and industry veteran, Ajay Devgn brings over three decades of expertise to Prismix, a trailblazer in Generative AI. With a visionary approach to storytelling and technology, he drives AI-powered innovations in filmmaking, VFX, and digital content creation. Under his leadership, Prismix is redefining entertainment by seamlessly merging creativity with cutting-edge AI, setting new industry benchmarks.",
+        "A four-time National Award-winning actor and industry veteran, Ajay Devgn brings over three decades of expertise to Prismix, a trailblazer in Generative AI. With a visionary approach to storytelling and technology, he drives AI-powered innovations in filmmaking, VFX, and digital content creation. Under his leadership, Prismix is redefining entertainment by seamlessly merging creativity with cutting-edge AI, setting new industry benchmarks.",
     },
     {
       name: "Sahil Nayar",
