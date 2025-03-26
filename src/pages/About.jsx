@@ -35,7 +35,7 @@ const About = () => {
       designation: "CFO",
       image: "/nilesh.jpeg",
       description:
-        "With 28+ years of experience, Nilesh Ghag drives financial strategy across Media, Green Energy, and Real Estate. As CFO, he oversees fiscal integrity for Devgn Films LLP, NY VFXWAALA LLP, Devgan Entertainment Software Ltd., NY Green Energy Pvt Ltd., and more. Under his leadership, Devgan Entertainment has released 100+ films, NY VFXWAALA has flourished, and NY Green Energy has scaled to 150 MW, targeting 500 MW.",
+        "With 28+ years of experience, Nilesh Ghag drives financial strategy across Media & entertainment, Renewable Energy, and Real Estate. As CFO, he oversees fiscal integrity for Devgn Films LLP, NY VFXWAALA LLP, Devgan Entertainment Software Ltd., NY Green Energy Pvt Ltd., and more. Under his leadership, NY VFXWAALA has flourished and NY Green Energy has scaled to 150 MW, with an ambitious target of 500 MW, and he has made a remarkable contribution to the production of blockbuster projects in Devgn films.",
     },
     {
       name: "Ruchi Kanojiya",
