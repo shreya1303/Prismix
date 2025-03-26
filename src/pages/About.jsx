@@ -31,7 +31,7 @@ const About = () => {
         "Vatsal Sheth is an acclaimed Indian actor and entrepreneur, known for Taarzan: The Wonder Car, Ek Hasina Thi, and Just Mohabbat. As Co-Founder and CEO of Prismix Studios, Vatsal leads innovation in media and digital storytelling, blending technology with entertainment. A fitness enthusiast and sports lover, he continues to shape the future of Indian entertainment through his creative and business ventures.",
     },
     {
-      name: "Nilesh Garg",
+      name: "Nilesh Ghag",
       designation: "CFO",
       image: "/nilesh.jpeg",
       description:
